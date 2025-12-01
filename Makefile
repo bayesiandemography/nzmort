@@ -3,7 +3,7 @@ COL_FEMALE := darkorange
 COL_MALE := darkblue
 
 .PHONY: all
-all: out/fig_rates_direct.pdf \
+all: out/fig_rates_direct.png \
      site
 
 
@@ -11,6 +11,7 @@ all: out/fig_rates_direct.pdf \
 
 out/deaths.rds: src/deaths.R \
   data/VSD349204_20251130_103448_2.csv.gz
+	mkdir -p out
 	Rscript $^ $@
 
 out/popn.rds: src/popn.R \
@@ -25,7 +26,7 @@ out/data.rds: src/data.R \
 
 ## Plots of raw data
 
-out/fig_rates_direct.pdf: src/fig_rates_direct.R \
+out/fig_rates_direct.png: src/fig_rates_direct.R \
   out/data.rds
 	Rscript $^ $@ --col_female=$(COL_FEMALE) \
                       --col_male=$(COL_MALE)
