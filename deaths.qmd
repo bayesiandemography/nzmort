@@ -1,0 +1,19 @@
+---
+title: "Deaths"
+---
+
+```{r}
+library(DT)
+
+deaths <- readRDS("out/deaths.rds")
+
+datatable(
+  deaths,
+  extensions = "Buttons",
+  options = list(
+    pageLength = 25,
+    dom = "Bfrtip",
+    buttons = c("copy", "csv", "excel", "print")
+  )
+)
+```

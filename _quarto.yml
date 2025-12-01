@@ -1,0 +1,19 @@
+project:
+  type: website
+
+website:
+  title: "My Data Portal (prototype)"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: deaths.qmd
+        text: Deaths
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+
+execute:
+  echo: false

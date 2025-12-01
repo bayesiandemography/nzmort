@@ -1,0 +1,21 @@
+---
+title: "NZ mortality, 1992–2024"
+---
+
+# Overview
+
+Prototype data portal for monthly mortality in Aotearoa New Zealand.
+
+This site is automatically built from the code and data in the  
+[`bayesiandemography/nzmort`](https://github.com/bayesiandemography/nzmort)
+repository.
+
+## Data
+
+- [National mortality data](data_national.qmd)
+- *(Add more pages here as they are created)*
+
+## Notes
+
+This is an early prototype.  
+Additional filtering options, metadata, documentation, and visualisations will be added later.

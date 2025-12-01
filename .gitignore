@@ -17,4 +17,8 @@
 *.o
 *.so
 *.png
-kathmandu/*.pdf
+_site/
+*.html
+*.pdf
+.quarto/
+
