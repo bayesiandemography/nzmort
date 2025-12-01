@@ -27,11 +27,7 @@ jobs:
 
       - name: Install R packages
         run: |
-          Rscript -e 'install.packages(c(
-	  "quarto",
-	  "ggplot2",
-	  "DT"
-	  ),
+          Rscript -e 'install.packages(c("quarto", "ggplot2", "DT"),
 	  repos = "https://cloud.r-project.org")'
 
       - name: Install Quarto CLI
