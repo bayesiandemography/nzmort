@@ -1,0 +1,19 @@
+---
+title: "Population"
+---
+
+```{r}
+library(DT)
+
+popn <- readRDS("out/popn.rds")
+
+datatable(
+  popn,
+  extensions = "Buttons",
+  options = list(
+    pageLength = 25,
+    dom = "Bfrtip",
+    buttons = c("copy", "csv", "excel", "print")
+  )
+)
+```

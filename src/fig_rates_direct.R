@@ -6,23 +6,24 @@ suppressPackageStartupMessages({
 })
 
 cmd_assign(.data = "out/data.rds",
-           col_line_1 = "#228B22",
-           col_line_2 = "#7E1E9C",
+           col_female = "darkorange",
+           col_male = "darkblue",
            .out = "out/fig_rates_direct.pdf")
 
 data <- readRDS(.data)
 
 p <- ggplot(data, aes(x = time, y = deaths/popn, color = sex)) +
-  facet_wrap(vars(age), nrow = 1) + #, scale = "free_y") +
+  facet_wrap(vars(age), nrow = 1) +
   geom_line(linewidth = 0.2) +
-  scale_color_manual(values = c(col_line_1, col_line_2)) +
+  scale_color_manual(values = c(col_female, col_male)) +
   scale_y_log10() +
   ylab("") +
-  xlab("")
+  xlab("") +
+  theme(legend.position = "top")
 
 pdf(file = .out,
     width = 6,
-    height = 7)
+    height = 2)
 plot(p)
 dev.off()        
 

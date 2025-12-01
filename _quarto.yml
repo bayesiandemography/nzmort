@@ -2,13 +2,15 @@ project:
   type: website
 
 website:
-  title: "My Data Portal (prototype)"
+  title: "Mortality Aotearoa"
   navbar:
     left:
       - href: index.qmd
         text: Home
       - href: deaths.qmd
         text: Deaths
+      - href: popn.qmd
+        text: Population
 
 format:
   html:

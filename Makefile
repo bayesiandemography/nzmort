@@ -1,14 +1,10 @@
 
-COL_FILL = \#A6CEE3
-COL_LINE = \#1F4E79
-COL_POINT = \#D73027
-COL_FILL_1 = \#A6D854
-COL_LINE_1 = \#228B22
-COL_FILL_2 = \#CC79A7
-COL_LINE_2 = \#7E1E9C
+COL_FEMALE := darkorange
+COL_MALE := darkblue
 
 .PHONY: all
-all: out/fig_rates_direct.pdf
+all: out/fig_rates_direct.pdf \
+     site
 
 
 ## Prepare data
@@ -31,7 +27,8 @@ out/data.rds: src/data.R \
 
 out/fig_rates_direct.pdf: src/fig_rates_direct.R \
   out/data.rds
-	Rscript $^ $@ 
+	Rscript $^ $@ --col_female=$(COL_FEMALE) \
+                      --col_male=$(COL_MALE)
 
 
 ## Model
@@ -48,6 +45,13 @@ out/lifeexp.rds: src/lifeexp.R \
   out/aug.rds
 	Rscript $^ $@
 
+
+## Website
+
+.PHONY: site
+site:  out/deaths.rds \
+       out/popn.rds
+	quarto render
 
 
 ## Clean

@@ -22,3 +22,5 @@ _site/
 *.pdf
 .quarto/
 
+
+/.quarto/
